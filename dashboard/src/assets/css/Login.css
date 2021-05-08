@@ -1,0 +1,82 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    margin-top:25vh;
+    color: white;
+}
+.login-header{
+    display: flex;
+    justify-content: center;
+}
+.login-form{
+
+    width:40%;
+    margin: auto;
+}
+.login-form-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 10% 2% 10%;
+}
+.login-form-button{
+    display: flex;
+    justify-content: center;
+    padding: 2% 10%;
+}
+.login-form-button > .btn{
+    width:100%;
+}
+.form-field{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid gray;
+    color: white;
+    transition: 1s;
+    transform: scale();
+}
+.form-field:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(124, 227, 245);
+}
+
+@media screen and (max-width: 600px) {
+    .login-container{
+      display: flex;
+      flex-direction: column;
+    }
+    .login-header{
+        display: flex;
+        justify-content: center;
+    }
+    .login-form{
+        width:100%;
+        margin: auto;
+    }
+    .login-form-item{
+        display: flex;
+        justify-content: center;
+        padding: 2% 2%;
+    }
+    .login-form-button{
+        display: flex;
+        justify-content: center;
+        padding: 2% 15%;
+    }
+    .login-form-button > .btn{
+        width:100%;
+    }
+    .form-field{
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid gray;
+        color: white;
+        transition: 1s;
+        transform: scale();
+    }
+    .form-field:focus{
+        outline: none;
+        border-bottom: 2px solid rgb(124, 227, 245);
+    }
+  }

@@ -1,0 +1,102 @@
+.dashboard-container{
+}
+.dashboard-navbar{
+    background-color: white;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    padding: 1% 1%;
+    border:1px solid grey;
+    margin-bottom: 2%;
+}
+.dashboard-navbar .dashboard-head{
+    font-weight: bold;
+}
+.dashboard-navbar .dashboard-nav-list{
+    width:50%;
+}
+.dashboard-navbar .dashboard-nav-list ul{
+    padding:1% 1%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.dashboard-navbar .dashboard-nav-list ul li{
+    list-style-type: none;
+    padding:1% 1%;
+    transition:0.1s;
+}
+.dashboard-navbar .dashboard-nav-list ul li:hover{
+    cursor: pointer;
+    font-weight: bold;
+    border-bottom: 2px solid blueviolet;
+}
+.dashboard-message{
+    padding:0% 2%;
+}
+.db-link:hover{
+    cursor: pointer;
+}
+.dashboard-form{
+    width:40%;
+    margin: auto;
+}
+.dashboard-form-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 10% 2% 10%;
+}
+.dashboard-form-button{
+    display: flex;
+    justify-content: center;
+    padding: 2% 10%;
+}
+.dashboard-form-button > .btn{
+    width:100%;
+}
+.form-field{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid gray;
+    color: white;
+    transition: 1s;
+    transform: scale();
+}
+.form-field:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(124, 227, 245);
+}
+.dashboard-radio{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 10% 2% 10%;
+}
+.radio-input{
+    display: flex;
+    width:12%;
+    justify-content: space-between;
+}
+.dashboard-main-form{
+    width: 50%;
+    margin: auto;
+    height:100%;
+}
+.dashboard-main-form-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 10% 2% 10%;
+}
+.d-form-field{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid gray;
+    color: white;
+    transition: 1s;
+    transform: scale();
+}

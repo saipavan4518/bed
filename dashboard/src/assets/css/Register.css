@@ -1,0 +1,108 @@
+.register-container{
+    display: flex;
+    flex-direction: column;
+    margin-top:25vh;
+    color: white;
+}
+.register-header{
+    display: flex;
+    justify-content: center;
+}
+.register-form{
+    width:40%;
+    margin: auto;
+}
+.register-form-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 10% 2% 10%;
+}
+.register-form-button{
+    display: flex;
+    justify-content: center;
+    padding: 2% 10%;
+}
+.register-form-button > .btn{
+    width:100%;
+}
+.form-field{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid gray;
+    color: white;
+    transition: 1s;
+    transform: scale();
+}
+.form-field:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(124, 227, 245);
+}
+.register-message{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width:25%;
+    height:15%;
+    background-color: white;
+    color:black;
+    z-index: 5;
+    border-radius: 10px;
+}
+.r-m-head{
+    padding:1% 1%;
+}
+.r-m-content{
+    display: flex;
+    flex-wrap: wrap;
+    padding:1% 1%;
+}
+@media screen and (max-width: 600px) {
+    .register-container{
+      display: flex;
+      flex-direction: column;
+    }
+    .register-header{
+        display: flex;
+        justify-content: center;
+    }
+    .register-form{
+        width:100%;
+        margin: auto;
+    }
+    .register-form-item{
+        display: flex;
+        justify-content: space-between;
+        padding: 2% 2%;
+    }
+    .register-form-button{
+        display: flex;
+        justify-content: center;
+        padding: 2% 15%;
+    }
+    .register-form-button > .btn{
+        width:100%;
+    }
+    .form-field{
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid gray;
+        color: white;
+        transition: 1s;
+        transform: scale();
+    }
+    .form-field:focus{
+        outline: none;
+        border-bottom: 2px solid rgb(124, 227, 245);
+    }
+    .register-message{
+        position: absolute;
+        right:25%;
+        width:50%;
+        height:15%;
+        background-color: white;
+        color:black;
+        z-index: 5;
+    }
+  }

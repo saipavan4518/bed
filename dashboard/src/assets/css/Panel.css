@@ -1,0 +1,36 @@
+.panel-container{
+    height: 100%;
+    width: 100%;
+}
+.panel-control-buttons{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.panel-btn{
+    border: none;
+    background: none;
+    color: white;
+}
+.panel-btn:hover{
+    color: cadetblue;
+}
+@media screen and (max-width: 600px) {
+    .panel-container{
+        height: 100%;
+        width: 100%;
+    }
+    .panel-control-buttons{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .panel-btn{
+        border: none;
+        background: none;
+        color: white;
+    }
+    .panel-btn:hover{
+        color: cadetblue;
+    }
+}

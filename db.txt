@@ -1,0 +1,31 @@
+create database HBA;
+use HBA;
+create table hospital_login (hid varchar(255) primary key, pass varchar(1024));
+
+create table hospital_data (hid varchar(255) primary key,
+	total_covid_beds int,
+    occp_covid_beds int, 
+    total_oxy_sup_beds int,
+    occp_oxy_sup_beds int,
+    total_vent_beds int,
+    occp_vent_beds int,
+    total_icu_beds int,
+    occp_icu_beds int,
+    foreign key (hid) references hospital_login(hid) on delete cascade
+);
+
+create table hospital_info(hid varchar(255) primary key,
+	address varchar(1024),
+    pincode varchar(6),
+    state varchar(255),
+    district varchar(255),
+    poc1 varchar(10),
+    poc2 varchar(10),
+	is_covid_h boolean,
+    foreign key (hid) references hospital_login(hid) on delete cascade);
+
+create table logging(sno int auto_increment primary key,
+    hid varchar(255), 
+    name_of_u varchar(255), 
+    ts varchar(255), 
+    foreign key (hid) references hospital_login(hid));
