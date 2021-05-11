@@ -142,4 +142,66 @@ router.route("/update/info").put(async (req,res)=>{
 })
 
 
+router.route("/search/pincode").get((req,res)=>{
+    if(!req.body){
+        return res.send({
+            eid:50,
+            details:"Error in Posting the query, retry"
+        });
+    }
+    const pincode = req.query.pincode;
+    if(!pincode){
+        return res.send({
+            eid:1000,
+            details:"Pincode is Required"
+        });
+    }
+    const query = `select * from hospital_info as hi inner join hospital_data as hd on hi.hid = hd.hid where pincode = "${pincode}"`;
+    db_pool.getConnection((error, connection)=>{
+        if(error){
+            return res.status(200).send({eid:100,details:"Database servers are down",error:error});
+        }
+        connection.query(query, (error, results, fields)=>{
+            if(error){
+                return res.status(200).send({eid:200,details:"Invalid Query",error:error});
+            }
+            return res.status(200).send({eid:200,"data":results})
+        })
+        connection.release();
+    })
+})
+
+router.route("/search/hospital").get((req,res)=>{
+    if(!req.body){
+        return res.send({
+            eid:50,
+            details:"Error in Posting the query, retry"
+        });
+    }
+    const hid = req.query.hid;
+    if(!hid){
+        return res.send({
+            eid:1000,
+            details:"HospitalID is Required"
+        });
+    }
+    const query = `select * from hospital_info as hi inner join ( select 
+                        hd.hid, hd.total_covid_beds, hd.occp_covid_beds, hd.total_oxy_sup_beds,
+                        hd.occp_oxy_sup_beds, hd.total_vent_beds, hd.occp_vent_beds, hd.total_icu_beds, hd.occp_icu_beds,
+                        l.name_of_u, l.ts
+                        from hospital_data as hd inner join logging as l on l.hid = hd.hid) as rd on hi.hid = rd.hid where hi.hid = "${hid}"`;
+    db_pool.getConnection((error, connection)=>{
+        if(error){
+            return res.status(200).send({eid:100,details:"Database servers are down",error:error});
+        }
+        connection.query(query, (error, results, fields)=>{
+            if(error){
+                return res.status(200).send({eid:200,details:"Invalid Query",error:error});
+            }
+            return res.status(200).send({eid:200,"data":results})
+        })
+        connection.release();
+    })
+})
+
 module.exports = router;

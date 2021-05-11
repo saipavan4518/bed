@@ -126,3 +126,8 @@
 ::ffff:127.0.0.1 - - [08/May/2021:12:18:20 +0000] "GET /admin/hospital/info/updated?hid=pavan2020 HTTP/1.1" 200 25
 ::ffff:127.0.0.1 - - [08/May/2021:12:22:00 +0000] "GET /admin/hospital/info/updated?hid=pavan2020 HTTP/1.1" 200 25
 ::ffff:127.0.0.1 - - [08/May/2021:12:45:28 +0000] "PUT /admin/hospital/update/data HTTP/1.1" 200 41
+::1 - - [11/May/2021:07:01:06 +0000] "GET /admin/hospital/search/pincode?pincode=50 HTTP/1.1" 200 318
+::1 - - [11/May/2021:07:22:51 +0000] "GET /admin/hospital/search/hospital HTTP/1.1" 500 1559
+::1 - - [11/May/2021:07:23:06 +0000] "GET /admin/hospital/search/hospital HTTP/1.1" 200 47
+::1 - - [11/May/2021:07:23:17 +0000] "GET /admin/hospital/search/hospital?hid=hospital101 HTTP/1.1" 200 437
+::1 - - [11/May/2021:07:23:24 +0000] "GET /admin/hospital/search/hospital?hid=hospital1010202 HTTP/1.1" 200 21
