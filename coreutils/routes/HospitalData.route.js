@@ -204,4 +204,35 @@ router.route("/search/hospital").get((req,res)=>{
     })
 })
 
+router.route("/search/district").get((req,res)=>{
+    if(!req.body){
+        return res.send({
+            eid:50,
+            details:"Error in Posting the query, retry"
+        });
+    }
+    let district = req.query.district;
+    if(!district){
+        return res.send({
+            eid:1000,
+            details:"HospitalID is Required"
+        });
+    }
+    district = district.toUpperCase();
+    const query = `select * from hospital_info as hi inner join hospital_data as hd on hi.hid = hd.hid where district = "${district}"`;
+    
+    db_pool.getConnection((error, connection)=>{
+        if(error){
+            return res.status(200).send({eid:100,details:"Database servers are down",error:error});
+        }
+        connection.query(query, (error, results, fields)=>{
+            if(error){
+                return res.status(200).send({eid:200,details:"Invalid Query",error:error});
+            }
+            return res.status(200).send({eid:200,"data":results})
+        })
+        connection.release();
+    })
+})
+
 module.exports = router;
